@@ -6,6 +6,7 @@ venv
 *.pkl
 *.csv
 *.exe
+credentials.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
