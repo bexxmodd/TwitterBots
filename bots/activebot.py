@@ -1,4 +1,4 @@
-# tweepy-bots/bots/activebot.py
+# TwitterBot/bots/activebot.py
 
 import tweepy
 import logging
