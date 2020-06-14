@@ -3,7 +3,6 @@
 
 ## Folders Structure
 ```
--------------------------------------
 |---/bots
 |     |---activius.py
 |     |---cfg.py
@@ -15,7 +14,6 @@
 |---LICENSE.txt
 |---README.md
 |---requirements.txt
--------------------------------------
 ```
 
 ## Installation
