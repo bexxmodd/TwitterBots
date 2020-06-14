@@ -63,4 +63,4 @@ List of the dependencies is available in the `requirements.txt` file. Majority o
 [![Bexx Modd GitHub](https://i.imgur.com/rnEivsV.png)](https://github.com/bexxmodd) [![Bexx Modd Twitter](https://i.imgur.com/BMdn8gX.png)](https://twitter.com/bexxmodd) [![Bexx Modd LinkedIn](https://i.imgur.com/NxflDxM.png)](https://www.linkedin.com/in/bmodebadze/)
 
 ---------
-MIT
+Distributed under the **MIT** license. See `LICENSE.txt` for more information.
