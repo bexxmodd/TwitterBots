@@ -1,4 +1,4 @@
-# TwitterBot
+# TwitterBots
 Increase you Twitter presence with this bots.
 
 Currently three bots which will expand your social media (Twitter in these case) outreach by maintaining actvitiy level.
