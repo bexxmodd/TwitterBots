@@ -46,7 +46,7 @@ export ACCESS_TOKEN="your_access_token"
 export ACCESS_TOKEN_SECRET="your_access_token_secret"
 ```
 
-After you have exported your Twitter credentials you can execute files through the terminal.
+After you have exported your Twitter credentials you can execute files through the terminal. For example:
 ```
 python3 bots/statusio.py
 ```
