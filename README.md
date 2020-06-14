@@ -9,7 +9,6 @@ Currently three bots which will expand your social media (Twitter in these case)
 
 > bot **Activius** - Given the keywords searches for the tweets, likes them, if not liked before, retweets them if not retweeted before.
 
-[![NPM Version][npm-image]][npm-url]
 ------
 Run the `.py` file in a terminal and bot gets to work:
 
