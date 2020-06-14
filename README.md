@@ -1,7 +1,7 @@
 # TwitterBot
 > Increase you Twitter presence with this bots.
 
-### Folders Structure
+## Folders Structure
 ```
 -------------------------------------
 |---/bots
@@ -30,12 +30,12 @@ export ACCESS_TOKEN="your_access_token"
 export ACCESS_TOKEN_SECRET="your_access_token_secret"
 ```
 
-### Release History
+## Release History
 
 * 0.1.1
   * Alpha release with three bots
 
 
-### Development Setup
+## Development Setup
 
 List of the dependencies is available in the `requirements.txt` file. Majority of packages are included with a standard python 3.5+ install.
