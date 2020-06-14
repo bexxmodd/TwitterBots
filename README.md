@@ -18,17 +18,19 @@ Run the `.py` file in a terminal and bot gets to work:
 
 ## Folders Structure
 ```
-|---/bots
-|     |---activius.py
-|     |---cfg.py
-|     |---dayandtime.py
-|     |---followero.py
-|     |---statusio.py
-|
-|---.gitignore
-|---LICENSE.txt
-|---README.md
-|---requirements.txt
+TwitterBots/
+   |
+   |———bots/
+   |     |——— activius.py
+   |     |——— cfg.py
+   |     |——— dayandtime.py
+   |     |——— followero.py
+   |     |——— statusio.py
+   |
+   |——— .gitignore
+   |——— LICENSE.txt
+   |——— README.md
+   |——— requirements.txt
 ```
 
 ## Installation
