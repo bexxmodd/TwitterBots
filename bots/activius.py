@@ -1,4 +1,4 @@
-# TwitterBot/bots/activebot.py
+# TwitterBot/bots/activius.py
 
 import tweepy
 import logging
@@ -6,17 +6,22 @@ from cfg import create_api
 
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger()
+LOGGER = logging.getLogger()
 
 class LikeAndRetweet(tweepy.StreamListener):
-    
+    """Bot activiues - who is responsbile to search for
+
+    The tweets with given keywords, like them, and rewteet.
+    Only if the tweet has not been liked and retweeted before.
+    """
+
     def __init__(self, api):
         self.api = api
         self.me = api.me()
 
 
     def on_status(self, tweet):
-        logger.info(f"Processing tweet id: {tweet.id}")
+        LOGGER.info(f"Processing tweet id: {tweet.id}")
         if tweet.in_reply_to_status_id is not None or \
             tweet.user.id == self.me.id:
             # This tweet is a reply or I'm its author so, I ignore it.
@@ -27,18 +32,18 @@ class LikeAndRetweet(tweepy.StreamListener):
             try:
                 tweet.favorite()
             except Exception:
-                logger.error("Error on favorited", exc_inf=True)
+                LOGGER.error("Error on favorited", exc_info=True)
         
         if not tweet.retweeted:
-            # Retweeting the target tweet if not rt'ed before.
+            # Retweeting the tweet if not rt'ed already.
             try:
                 tweet.retweet()
             except Exception:
-                logger.error("Error on retweeting", exc_info=True)
+                LOGGER.error("Error on retweeting", exc_info=True)
 
         
         def or_error(self, status):
-            logger.error(status)
+            LOGGER.error(status)
 
 def main(keywords):
     api = create_api()
@@ -48,4 +53,4 @@ def main(keywords):
 
 
 if __name__ == '__main__':
-    main(['Data Science', 'Data Analytics', 'Machine Learning', 'Data Visualization', 'Data Engineering', 'Python'])
+    main(['Data Science', 'Data Analytics', 'Machine Learning', 'Data Visualization', 'Data Engineering', 'Python', 'Artificial Intelligence'])

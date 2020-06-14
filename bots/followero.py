@@ -1,4 +1,4 @@
-# tweepy-bots/bots/followerbot.py
+# tweepy-bots/bots/followero.py
 
 import tweepy
 import logging
@@ -6,20 +6,21 @@ from cfg import create_api
 import time
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger()
+LOGGER = logging.getLogger()
 
 def follow_followers(api):
-    logger.info("Following followers")
+    """Follows user's back who follow me"""
+    LOGGER.info("Following followers")
     for follower in tweepy.Cursor(api.followers).items():
         if not follower.following:
-            logger.info(f"Following {follower.name}")
+            LOGGER.info(f"Following {follower.name}")
             follower.follow()
 
 def main():
     api = create_api()
     while True:
         follow_followers(api)
-        logger.info("Loading...")
+        LOGGER.info("Loading...")
         time.sleep(180)
 
 if __name__ == "__main__":

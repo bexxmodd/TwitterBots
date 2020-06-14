@@ -3,7 +3,7 @@ from datetime import datetime
 
 """Python program to find day of the week for a given date.
 
-Also to find todays date, which can be used to find the day
+Also finds current date, which can be used to find the day.
 """
 
 # To find a day of the week.

@@ -4,7 +4,13 @@ import tweepy
 import logging
 import os
 
-logger = logging.getLogger()
+"""Create the authentication creditentials.
+
+And to control the activity limit.
+For bots to use with Tweepy methods.
+"""
+
+LOGGER = logging.getLogger()
 
 def create_api():
     consumer_key = os.getenv("CONSUMER_KEY")
@@ -19,7 +25,7 @@ def create_api():
     try:
         api.verify_credentials()
     except Exception:
-        logger.error("Authentication Error...", exc_info=True)
+        LOGGER.error("Authentication Error...", exc_info=True)
         raise Exception
-    logger.info("API created")
+    LOGGER.info("API created")
     return api
