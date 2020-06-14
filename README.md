@@ -1,10 +1,10 @@
 # TwitterBots
-Increase you Twitter presence with this bots.
+Increase your Twitter presence with these bots.
 
-Currently three bots which will expand your social media (Twitter in these case) outreach by maintaining actvitiy level.
+Currently, three bots which will expand your social media (Twitter in these case) outreach by maintaining activity level.
 
 -----
-> bot **Statusio** - Based on week of the day, picks the topic and scraps top articles from the leading webpages of to post tweet them as a status with a comment and relevant hashtags.
+> bot **Statusio** - Based on a week of the day, picks the topic and scraps top articles from the leading webpages of to post tweet them as a status with a comment and relevant hashtags.
 
 > bot **Folowero** - Follows back whoever follows you.
 
@@ -21,11 +21,11 @@ Run the `.py` file in a terminal and bot gets to work:
 TwitterBots/
    |
    |———bots/
-   |     |——— activius.py
-   |     |——— cfg.py
-   |     |——— dayandtime.py
-   |     |——— followero.py
-   |     |——— statusio.py
+   |    |——— activius.py
+   |    |——— cfg.py
+   |    |——— dayandtime.py
+   |    |——— followero.py
+   |    |——— statusio.py
    |
    |——— .gitignore
    |——— LICENSE.txt
@@ -35,8 +35,8 @@ TwitterBots/
 
 ## Installation
 
-Currently only option is to fork the repo and run it through your terminal by executing each of the bot individually.
-Before executing python file you need to register as a developer on a Tweitter API and then make sure you set up your Tweeter API creditentials through the terminal.
+Currently, the only option is to fork the repo and run it through your terminal by executing each of the bots individually.
+Before executing python file you need to register as a developer on a Twitter API and then make sure you set up your Tweeter API credentials through the terminal.
 
 #### Linux $ OS X:
 ```
@@ -46,15 +46,22 @@ export ACCESS_TOKEN="your_access_token"
 export ACCESS_TOKEN_SECRET="your_access_token_secret"
 ```
 
+After you have exported your Twitter credentials you can execute files through the terminal.
+```
+python3 bots/statusio.py
+```
+
+_P.S. For the version 0.5.0 bots will be deployed using Docker container and the guide will be added to this repo_
+
 ## Release History
 
 * 0.0.1
-  * Work in process..
+  * Work in the process..
 
 
 ## Development Setup
 
-List of the dependencies is available in the `requirements.txt` file. Majority of packages are included with a standard python 3.5+ install.
+A list of the dependencies is available in the `requirements.txt` file. The majority of packages are included with a standard python 3.5+ install.
 
 ## Meta
 
