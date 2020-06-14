@@ -3,6 +3,7 @@ Increase you Twitter presence with this bots.
 
 Currently three bots which will expand your social media (Twitter in these case) outreach by maintaining actvitiy level.
 
+-----
 > bot **Statusio** - Based on week of the day, picks the topic and scraps top articles from the leading webpages of to post tweet them as a status with a comment and relevant hashtags
 
 > bot **Folowero** - Follows back whoever follows you
