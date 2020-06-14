@@ -12,6 +12,7 @@
 |     |---statusio.py
 |
 |---.gitignore
+|---LICENSE.txt
 |---README.md
 |---requirements.txt
 -------------------------------------
@@ -39,3 +40,12 @@ export ACCESS_TOKEN_SECRET="your_access_token_secret"
 ## Development Setup
 
 List of the dependencies is available in the `requirements.txt` file. Majority of packages are included with a standard python 3.5+ install.
+
+## Meta
+
+**Follow me on social media:**
+
+[![Bexx Modd GitHub](https://i.imgur.com/rnEivsV.png)](https://github.com/bexxmodd) [![Bexx Modd Twitter](https://i.imgur.com/BMdn8gX.png)](https://twitter.com/bexxmodd) [![Bexx Modd LinkedIn](https://i.imgur.com/NxflDxM.png)](https://www.linkedin.com/in/bmodebadze/)
+
+---------
+MIT
