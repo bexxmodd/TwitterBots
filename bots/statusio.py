@@ -44,7 +44,7 @@ class StatusUpdate():
                         if i.string.startswith(('Subscribe', 'subscribe', 'See', 'More', 'Old')):
                             pass
                         else:
-                            sleep(3)
+                            sleep(60)
                             hashtag = ''
                             for h in random.sample(ai_hashtags, k=3): # Pick three unique random hashtags from the list.
                                 hashtag += " #" + str(h)             
