@@ -20,7 +20,7 @@ from cfg import create_api
 
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger()
+LOGGER = logging.getLogger()
 
 class StatusUpdate():
     """Bot Statusio - scraps the web-page for the new articles.
@@ -52,15 +52,17 @@ class StatusUpdate():
         except:
             self.api.update_status("How's your Data Science project going? #DataScience #MachineLearning #AI")
 
+
 def main():
     api = create_api()
-    today = dat.find_day(dat.today())
-    print(today)
-    if today in ['Monday', 'Wednesday', 'Saturday']:
-        tweeting = StatusUpdate(api).ds_central()
-    else:
-        print('Today is', today, 'I have an off')
-
+    while True:
+        today = dat.find_day(dat.today())
+        if today in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday']:
+            LOGGER.info(f'Today is a {today}, time to start posting')
+            StatusUpdate(api).ds_central()
+        else:
+            print('Today is', today, 'I have an off')
+        sleep(12 * 3600)
 
 if __name__ == '__main__':
     main()
