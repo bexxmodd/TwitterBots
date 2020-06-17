@@ -59,7 +59,7 @@ def main():
     if today in ['Monday', 'Wednesday', 'Saturday']:
         tweeting = StatusUpdate(api).ds_central()
     else:
-        pass
+        print('Today is', today, 'I have an off')
 
 
 if __name__ == '__main__':
