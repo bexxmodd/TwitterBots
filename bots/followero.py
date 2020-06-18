@@ -12,7 +12,7 @@ FOLLOWERS = []
 def follow_followers(api):
     """Follows user's back who follow me"""
     LOGGER.info("Following followers")
-    for follower in tweepy.Cursor(api.followers).items():
+    for follower in tweepy.Cursor(api.followers).items(10):
         if not follower.following:
             try:
                 LOGGER.info(f'Following {follower.name}')
@@ -35,7 +35,7 @@ def main():
         msg_follower(api)
         follow_followers(api)
         LOGGER.info("Loading...")
-        time.sleep(3600)
+        time.sleep(6 * 3600)
 
 if __name__ == "__main__":
     main()
