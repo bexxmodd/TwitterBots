@@ -54,9 +54,10 @@ python3 bots/statusio.py
 _P.S. For the version 0.5.0 bots will be deployed using Docker container and the guide will be added to this repo_
 
 ## Release History
-
+* 0.0.5
+   * Added loop to the status updates, sends thank you message to new followers
 * 0.0.1
-  * Work in the process..
+   * Work in the process..
 
 
 ## Development Setup
