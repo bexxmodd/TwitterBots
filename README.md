@@ -22,7 +22,7 @@ Run the `.py` file in a terminal and bot gets to work:
 ```
 TwitterBots/
    |
-   |———bots/
+   ├── bots/
    |    ├── cfg.py
    |    ├── dayandtime.py
    |    └── activius.py
