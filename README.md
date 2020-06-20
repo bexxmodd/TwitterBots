@@ -10,6 +10,8 @@ Currently, three bots which will expand your social media (Twitter in these case
 
 > bot **Activius** - Given the keywords searches for the tweets, likes them, if not liked before, retweets them if not. retweeted before.
 
+> bot **Mentionaro** _(NEW!)_ - Checks for the mentions. If the user has not responded and the mention involves any of the keywords, replies with 💯.
+
 ------
 Run the `.py` file in a terminal and bot gets to work:
 
@@ -21,16 +23,18 @@ Run the `.py` file in a terminal and bot gets to work:
 TwitterBots/
    |
    |———bots/
-   |    |——— activius.py
-   |    |——— cfg.py
-   |    |——— dayandtime.py
-   |    |——— followero.py
-   |    |——— statusio.py
+   |    ├── cfg.py
+   |    ├── dayandtime.py
+   |    └── activius.py
+   |    └── followero.py
+   |    └── statusio.py
+   |    └── mentionao.py
    |
-   |——— .gitignore
-   |——— LICENSE.txt
-   |——— README.md
-   |——— requirements.txt
+   ├── .gitignore
+   ├── LICENSE.txt
+   ├── README.md
+   ├── requirements.txt
+   └── Dockerfile
 ```
 
 ## Installation
@@ -54,6 +58,8 @@ python3 bots/statusio.py
 _P.S. For the version 0.5.0 bots will be deployed using Docker container and the guide will be added to this repo_
 
 ## Release History
+* 0.1.0
+   * New bot *mentionaro* is added; Dockerfile is created for deployment
 * 0.0.5
    * Added loop to the status updates, sends thank you message to new followers
 * 0.0.1
