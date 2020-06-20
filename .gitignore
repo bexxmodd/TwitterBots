@@ -67,3 +67,7 @@ docs/_build/
 
 # PyBuilder
 target/
+twitter-bots.tar.gz
+twitterbots4.tar.gz
+ubuntu@ec2-3-18-215-30.us-east-2.compute.amazonaws.com
+mykeypair.pem
