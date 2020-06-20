@@ -2,6 +2,7 @@
 
 import tweepy
 import logging
+from time import sleep
 from cfg import create_api
 
 
@@ -31,7 +32,7 @@ class LikeAndRetweet(tweepy.StreamListener):
             # Like the tweet if not liked already.
             try:
                 tweet.favorite()
-                sleep(30)
+                sleep(5)
             except Exception:
                 LOGGER.error("Error on favorited", exc_info=True)
         
@@ -39,7 +40,7 @@ class LikeAndRetweet(tweepy.StreamListener):
             # Retweeting the tweet if not rt'ed already.
             try:
                 tweet.retweet()
-                sleep(30)
+                sleep(5)
             except Exception:
                 LOGGER.error("Error on retweeting", exc_info=True)
 
