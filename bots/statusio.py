@@ -44,7 +44,7 @@ class StatusUpdate():
                         if i.string.startswith(('Subscribe', 'subscribe', 'See', 'More', 'Old')):
                             pass
                         else:
-                            sleep(60)
+                            sleep(20)
                             hashtag = ''
                             for h in random.sample(ai_hashtags, k=3): # Pick three unique random hashtags from the list.
                                 hashtag += " #" + str(h)             
@@ -57,12 +57,12 @@ def main():
     api = create_api()
     while True:
         today = dat.find_day(dat.today())
-        if today in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday']:
+        if today in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']:
             LOGGER.info(f'Today is a {today}, time to start posting')
             StatusUpdate(api).ds_central()
         else:
             print('Today is', today, 'I have an off')
-        sleep(12 * 3600)
+        sleep(3 * 3600)
 
 if __name__ == '__main__':
     main()

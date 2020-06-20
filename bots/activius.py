@@ -31,6 +31,7 @@ class LikeAndRetweet(tweepy.StreamListener):
             # Like the tweet if not liked already.
             try:
                 tweet.favorite()
+                sleep(30)
             except Exception:
                 LOGGER.error("Error on favorited", exc_info=True)
         
@@ -38,6 +39,7 @@ class LikeAndRetweet(tweepy.StreamListener):
             # Retweeting the tweet if not rt'ed already.
             try:
                 tweet.retweet()
+                sleep(30)
             except Exception:
                 LOGGER.error("Error on retweeting", exc_info=True)
 
@@ -53,4 +55,5 @@ def main(keywords):
 
 
 if __name__ == '__main__':
-    main(['Data Science', 'Data Analytics', 'Machine Learning', 'Data Visualization', 'Data Engineering', 'Python', 'Artificial Intelligence'])
+    main(['Data Science', 'Data Analytics', 'Machine Learning', 'Data Visualization',
+        'Data Engineering', 'Programming', 'Artificial Intelligence', 'Software Engineering'])
