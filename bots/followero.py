@@ -38,7 +38,11 @@ def main():
         msg_follower(api)
         follow_followers(api)
         LOGGER.info("Loading...")
+<<<<<<< HEAD
         time.sleep(4 * 3600)
+=======
+        time.sleep(6 * 3600)
+>>>>>>> 1cd0092627616de13b306b24fc8591026df5144d
 
 if __name__ == "__main__":
     main()
