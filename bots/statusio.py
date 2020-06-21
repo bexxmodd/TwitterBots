@@ -12,10 +12,10 @@ import tweepy
 import logging
 import requests
 import random
+import time
 import dayandtime as dat
 
 from bs4 import BeautifulSoup
-from time import sleep
 from cfg import create_api
 
 
@@ -44,7 +44,6 @@ class StatusUpdate():
                         if i.string.startswith(('Subscribe', 'subscribe', 'See', 'More', 'Old')):
                             pass
                         else:
-                            sleep(20)
                             hashtag = ''
                             for h in random.sample(ai_hashtags, k=3): # Pick three unique random hashtags from the list.
                                 hashtag += " #" + str(h)             
@@ -55,14 +54,17 @@ class StatusUpdate():
 
 def main():
     api = create_api()
+    # today = dat.find_day(dat.today())
+    # while today in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']:
     while True:
-        today = dat.find_day(dat.today())
-        if today in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']:
+        try:
             LOGGER.info(f'Today is a {today}, time to start posting')
             StatusUpdate(api).ds_central()
-        else:
-            print('Today is', today, 'I have an off')
-        sleep(3 * 3600)
+        except:
+            LOGGER.info('waiting')
+            time.sleep(300)
+    # else:
+        # print('Today is', today, 'I have an off')
 
 if __name__ == '__main__':
     main()

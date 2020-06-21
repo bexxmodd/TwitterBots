@@ -24,7 +24,7 @@ def follow_followers(api):
 
 def msg_follower(api):
     """Thanks a user for the follow"""
-    for dm in tweepy.Cursor(api.followers_ids).items(25):
+    for dm in tweepy.Cursor(api.followers_ids).items(20):
         if dm not in FOLLOWERS:
             LOGGER.info('msg sent')
             api.send_direct_message(dm, 'Thanks for the follow!')
@@ -37,8 +37,8 @@ def main():
     while True:
         msg_follower(api)
         follow_followers(api)
-        LOGGER.info("Loading...")
-        time.sleep(6 * 3600)
+        LOGGER.info("Resting...")
+        time.sleep(14400)
 
 if __name__ == "__main__":
     main()

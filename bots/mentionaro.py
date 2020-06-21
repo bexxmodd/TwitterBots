@@ -2,7 +2,6 @@
 
 import tweepy
 import logging
-import time
 
 from cfg import create_api
 
@@ -39,7 +38,6 @@ def main(keywords):
     while True:
         since_id = check_mentions(api, keywords, since_id)
         LOGGER.info("Waiting...")
-        time.sleep(30)
 
 if __name__ == '__main__':
     main(['thanks', 'rt', 'bexx', 'beka', 'modd', 'modebadze', 'like'])
