@@ -12,7 +12,6 @@ import tweepy
 import logging
 import requests
 import random
-import time
 import dayandtime as dat
 
 from bs4 import BeautifulSoup
@@ -45,26 +44,37 @@ class StatusUpdate():
                             pass
                         else:
                             hashtag = ''
-                            for h in random.sample(ai_hashtags, k=3): # Pick three unique random hashtags from the list.
+                            for h in random.sample(ai_hashtags, k=4): # Pick three unique random hashtags from the list.
                                 hashtag += " #" + str(h)             
                             self.api.update_status(str(i.string + ' >> ' + i['href']) + hashtag)
         except:
             self.api.update_status("How's your Data Science project going? #DataScience #MachineLearning #AI")
 
 
+    def swe_news(self):
+        swe_hashtags = ['softwareengineer', 'softwaredeveloper', 'coding', 'programming',
+            'programmer', 'computerscince', 'developerlife', 'technews']
+        try:
+            s = BeautifulSoup(requests.get('https://news.ycombinator.com/newest').text,
+                    'html.parser')
+            for i in s.find_all(class_='storylink'):
+                for h in random.sample(swe_hashtags, k=4): # Pick four unique random hashtags from the list.
+                    hashtag += " #" + str(h)  
+                self.api.update_status(str(i.string) + "!!! " + i['href'] + hashtag)
+        except:
+            self.api.update_status("How's your programming project going? #softwareengineer #programming #coding")
+
 def main():
     api = create_api()
-    # today = dat.find_day(dat.today())
-    # while today in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']:
+    today = dat.find_day(dat.today())
+    # while today in ['Monday', 'Wednesday', 'Friday', 'Saturday']:
     while True:
         try:
             LOGGER.info(f'Today is a {today}, time to start posting')
-            StatusUpdate(api).ds_central()
+            # StatusUpdate(api).ds_central()
+            StatusUpdate(api).swe_news()
         except:
-            LOGGER.info('waiting')
-            time.sleep(300)
-    # else:
-        # print('Today is', today, 'I have an off')
+            LOGGER.info('resting')
 
 if __name__ == '__main__':
     main()
