@@ -2,6 +2,7 @@
 
 import tweepy
 import logging
+import time
 
 from cfg import create_api
 
@@ -54,5 +55,5 @@ def main(keywords):
 
 
 if __name__ == '__main__':
-    main(['Data Science', 'Data Analytics', 'Machine Learning', 'Data Visualization',
-        'Data Engineering', 'Programming', 'Artificial Intelligence', 'Software Engineering'])
+    main(['Data Science', 'Data Analytics', 'Machine Learning', 'Data Visualization', 'Mathematics', 'Python Programming'
+        'Data Engineering', 'Programming', 'Artificial Intelligence', 'Software Engineering', 'Java Programming'])

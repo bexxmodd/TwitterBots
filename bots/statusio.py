@@ -3,7 +3,7 @@
 """
 - [x] Add the randomness of the Hashtags bot picks from the pull of hashtags
 - [ ] Create a function which tweets about the articles found on Economist
-- [ ] Create a function which tweets about the tech world news
+- [x] Create a function which tweets about the tech world news
 - [ ] Create a function which tweets about video games on Sundays
 """
 
@@ -71,8 +71,8 @@ def main():
     while True:
         try:
             LOGGER.info(f'Today is a {today}, time to start posting')
-            # StatusUpdate(api).ds_central()
-            StatusUpdate(api).swe_news()
+            StatusUpdate(api).ds_central()
+            # StatusUpdate(api).swe_news()
         except:
             LOGGER.info('resting')
 
