@@ -64,6 +64,11 @@ class StatusUpdate():
         except:
             self.api.update_status("How's your programming project going? #softwareengineer #programming #coding")
 
+    def custom_status(self):
+        message = 'New release of Diet Macros Calculator developed in Python using PyQT5. #python #pythonprogramming  https://github.com/bexxmodd/MacrosCalculator'
+        self.api.update_with_media('/home/bexx/Downloads/bexxterminal.gif', status=message)
+
+
 def main():
     api = create_api()
     today = dat.find_day(dat.today())
@@ -71,8 +76,11 @@ def main():
     while True:
         try:
             LOGGER.info(f'Today is a {today}, time to start posting')
-            StatusUpdate(api).ds_central()
+            # StatusUpdate(api).ds_central()
             # StatusUpdate(api).swe_news()
+            StatusUpdate(api).custom_status()
+            print("Status posted!")
+            break
         except:
             LOGGER.info('resting')
 
