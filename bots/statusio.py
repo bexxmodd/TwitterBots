@@ -65,8 +65,9 @@ class StatusUpdate():
             self.api.update_status("How's your programming project going? #softwareengineer #programming #coding")
 
     def custom_status(self):
-        message = 'New release of Diet Macros Calculator developed in Python using PyQT5. #python #pythonprogramming  https://github.com/bexxmodd/MacrosCalculator'
-        self.api.update_with_media('/home/bexx/Downloads/bexxterminal.gif', status=message)
+        message = 'I created a Linux program which graphically displayes disk/partition usage! This is a first released and I plan to expand and make it better. You can support my efforts just by starring the project https://github.com/bexxmodd/vizex #python #opensource #linux'
+        self.api.updated_status(message)
+        # self.api.update_with_media('/home/bexx/Downloads/bexxterminal.gif', status=message)
 
 
 def main():
