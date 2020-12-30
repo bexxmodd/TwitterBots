@@ -3,8 +3,11 @@
 import tweepy
 import logging
 import time
+import json
 
 from cfg import create_api
+from collections import defaultdict
+from datetime import datetime
 
 
 logging.basicConfig(level=logging.INFO)
@@ -21,6 +24,10 @@ class LikeAndRetweet(tweepy.StreamListener):
         self.api = api
         self.me = api.me()
 
+    def save_tweet(self, file_name: str, data: dict) -> None:
+        """Writes given data to a json file"""
+        with open(file_name, 'a') as outfile:
+            json.dump(data, outfile, indent=4, default=str)
 
     def on_status(self, tweet):
         LOGGER.info(f"Processing tweet id: {tweet.id}")
@@ -32,14 +39,32 @@ class LikeAndRetweet(tweepy.StreamListener):
         if not tweet.favorited:
             # Like the tweet if not liked already.
             try:
-                tweet.favorite()
+                # tweet.favorite()
+
+                # upload to json
+                data = {
+                    'user': tweet.user.id,
+                    'date': datetime.now().__str__(),
+                    'tweet': tweet.text
+                }
+                
+                self.save_tweet('tweets.txt', data)
             except Exception:
                 LOGGER.error("Error on favorited", exc_info=True)
         
         if not tweet.retweeted:
             # Retweeting the tweet if not rt'ed already.
             try:
-                tweet.retweet()
+                # tweet.retweet()
+
+                # upload to json
+                data = {
+                    'user': tweet.user.id,
+                    'date': datetime.now(),
+                    'tweet': tweet.text
+                }
+
+                self.save_tweet('tweets.txt', data)
             except Exception:
                 LOGGER.error("Error on retweeting", exc_info=True)
 
@@ -55,5 +80,9 @@ def main(keywords):
 
 
 if __name__ == '__main__':
-    main(['Data Science', 'Data Analytics', 'Machine Learning', 'Data Visualization', 'Mathematics', 'Python Programming'
-        'Data Engineering', 'Programming', 'Artificial Intelligence', 'Software Engineering', 'Java Programming'])
+    main([
+        'Data Science', 'Data Analytics', 'Machine Learning', 
+        'Data Visualization', 'Mathematics', 'Data Engineering', 
+        'Python Programming', 'Artificial Intelligence', 
+        'Software Engineering', 'Java'
+        ])

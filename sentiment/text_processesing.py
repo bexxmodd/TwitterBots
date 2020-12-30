@@ -1,4 +1,5 @@
 import spacy
+
 from collections import defaultdict
 
 class TextPrep:
@@ -43,7 +44,7 @@ class TextPrep:
     def vertorize(self, text: str) -> list:
         """Transforms tokens into a dense vector"""
         tokens = TextPrep.remove_stop_words(text)
-        return tokens.vector
+        return [tokens[i].vector for i in range(len(tokens))]
 
 
 if __name__ == '__main__':
