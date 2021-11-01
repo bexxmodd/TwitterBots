@@ -22,7 +22,7 @@ colored==1.4.2
 command-not-found==0.3
 configobj==5.0.6
 coverage==5.2.1
-cryptography==2.8
+cryptography==3.3.2
 cupshelpers==1.0
 dbus-python==1.2.16
 decorator==4.4.2
