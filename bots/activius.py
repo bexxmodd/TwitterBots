@@ -35,35 +35,23 @@ class ActionBot(tweepy.StreamListener):
             # This tweet is a reply or I'm its author so, I ignore it.
             LOGGER.error("Can't like my own tweet nor like the reply")
             return
-        
-        if not tweet.favorited:
-            # Like the tweet if not liked already.
-            try:
-                tweet.favorite()
-            except Exception as e:
-                code = e.response.status_code
-                if code == 429:
-                    LOGGER.error("Limit reached! Going to sleep for 15 minutes")
-                    time.sleep(1500)
-                LOGGER.error("Error on favorite", exc_info=True)
-        
-        if not tweet.retweeted:
-            # Retweeting the tweet if not rt'ed already.
-            try:
-                tweet.retweet()
-            except Exception as e:
-                code = e.response.status_code
-                if code == 429:
-                    LOGGER.error("Limit reached! Going to sleep for 15 minutes")
-                    time.sleep(1500)
-                elif code == 185:
-                    LOGGER.error("Daily limit reached! Sleep for 3 hours")
-                    time.sleep(6000)
-                LOGGER.error("Error on retweeting", exc_info=True)
-        time.sleep(60)
 
-        def or_error(self, status):
-            LOGGER.error(status)
+        try:
+            if not tweet.favorited:
+                tweet.favorite()
+            if not tweet.retweeted:
+                tweet.retweet()
+            time.sleep(45)
+        except Exception as e:
+            code = e.response.status_code
+            if code == 429:
+                LOGGER.error("Limit reached! Going to sleep for 15 minutes")
+                time.sleep(1500)
+            elif code == 185:
+                LOGGER.error("Daily limit reached! Sleep for 3 hours")
+                time.sleep(6000)
+            LOGGER.error("Error on retweeting", exc_info=True)
+
 
 def main(keywords):
     api = create_api()
