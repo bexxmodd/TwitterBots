@@ -25,7 +25,7 @@ def follow_followers(api):
             try:
                 LOGGER.info(f'Following {follower.name}')
                 follower.follow()
-            except:
+            except Exception:
                 print(f'I can\'t follow {follower.name}')
 
 def message_followers(api):
@@ -46,13 +46,32 @@ def check_if_user_in_followers(file_name, user_to_search):
                 return True
     return False
 
+def unfollow(api):
+    for f in tweepy.Cursor(api.friends).items():
+        try:
+            u = f.id
+            count = api.get_user(u).followers_count
+            if count < 330:
+                api.destroy_friendship(u)
+        except Exception:
+            continue
+
+
 def main():
     api = create_api()
     while True:
-        message_followers(api)
-        follow_followers(api)
-        LOGGER.info("Resting...")
-        time.sleep(60 * 180)
+        try:
+            message_followers(api)
+            # follow_followers(api)
+            LOGGER.info("Resting...")
+            time.sleep(60 * 180)
+            # unfollow(api)
+        except Exception:
+            continue
+        # message_followers(api)
+        # follow_followers(api)
+        # LOGGER.info("Resting...")
+        # time.sleep(60 * 180)
 
 if __name__ == "__main__":
     main()

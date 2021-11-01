@@ -52,8 +52,8 @@ class StatusUpdate():
 
 
     def swe_news(self):
-        swe_hashtags = ['softwareengineer', 'softwaredeveloper', 'coding', 'programming',
-            'programmer', 'computerscince', 'developerlife', 'technews']
+        swe_hashtags = ['softwareengineer', 'softwaredeveloper', 'coding', 'rustprogramming',
+            'computerscince', 'developerlife', 'technews', 'javaprogramming', 'pythonprogramming']
         try:
             s = BeautifulSoup(requests.get('https://news.ycombinator.com/newest').text,
                     'html.parser')
