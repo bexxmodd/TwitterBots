@@ -183,7 +183,7 @@ vizex==1.3.5
 wadllib==1.3.3
 wcwidth==0.2.5
 webencodings==0.5.1
-Werkzeug==1.0.1
+Werkzeug==2.2.3
 widgetsnbextension==3.5.1
 WoeUSB-ng==0.2.3
 wrapt==1.12.1
